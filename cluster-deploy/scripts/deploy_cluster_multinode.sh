@@ -28,12 +28,6 @@ env_modules=(jdk python)
 deploy_modules=()
 deploy_mode=$1
 all_node_ips=()
-a_ips=()
-b_ips=()
-a_jdk=()
-b_jdk=()
-a_python=()
-b_python=()
 source_code_dir=$(cd `dirname ${cwd}`; cd ../; pwd)
 module_deploy_script_dir=${cwd}/deploy
 output_packages_dir=$(cd `dirname ${cwd}`;pwd)/output_packages
@@ -57,32 +51,10 @@ get_all_node_ip() {
             for tmp_ip in ${tmp_ips[@]}
             do
                 all_node_ips[${#all_node_ips[*]}]=${tmp_ip}
-                if [[ "${party_name}" == "a" ]];then
-                    a_ips[${#a_ips[*]}]=${tmp_ip}
-                elif [[ "${party_name}" == "b" ]];then
-                    b_ips[${#b_ips[*]}]=${tmp_ip}
-                fi
             done
         done
 	done
     all_node_ips=($(echo ${all_node_ips[*]} | sed 's/ /\n/g'|sort | uniq))
-    a_ips=($(echo ${a_ips[*]} | sed 's/ /\n/g'|sort | uniq))
-    b_ips=($(echo ${b_ips[*]} | sed 's/ /\n/g'|sort | uniq))
-	#len=${#all_node_ips[*]}
-	#for ((i=0;i<$len;i++))
-	#do
-	#    for ((j=$len-1;j>i;j--))
-	#    do
-	#        if [[ ${all_node_ips[i]} = ${all_node_ips[j]} ]];then
-	#            unset all_node_ips[i]
-	#        fi
-	#    done
-	#done
-	#TODO: not all node need to deploy all env
-    a_jdk=("${a_ips[@]}")
-    b_jdk=("${b_ips[@]}")
-    a_python=("${a_ips[@]}")
-    b_python=("${b_ips[@]}")
 }
 
 if [[ ${deploy_modes[@]/${deploy_mode}/} != ${deploy_modes[@]} ]];then
@@ -218,11 +190,8 @@ config_mysql() {
     eval proxy_ip=\${${party_name}_proxy}
     eval metaservice_ip=\${${party_name}_metaservice}
     eval egg_ips=\${${party_name}_egg[*]}
-    if [[ "${party_name}" == "a" ]];then
-        party_ips=("${a_ips[@]}")
-    elif [[ "${party_name}" == "b" ]];then
-        party_ips=("${b_ips[@]}")
-    fi
+    party_ips =(my_ip)
+
     sed -i.bak "s#deploy_dir=.*#deploy_dir=${deploy_dir}/common#g" ./configurations.sh.tmp
     sed -i.bak "s/mysql_ip=.*/mysql_ip=${db_ip}/g" ./configurations.sh.tmp
     sed -i.bak "s/proxy_ip=.*/proxy_ip=${proxy_ip}/g" ./configurations.sh.tmp
@@ -271,14 +240,11 @@ config_fate_flow() {
     party_index=$1
     party_name=${party_names[party_index]}
     party_id=${party_list[${party_index}]}
-    if [[ "${party_name}" == "a" ]];then
-        my_ips=("${a_ips[@]}")
-    elif [[ "${party_name}" == "b" ]];then
-        my_ips=("${b_ips[@]}")
-    fi
 
     eval db_ip=\${${party_name}_mysql}
     eval redis_ip=\${${party_name}_redis}
+    my_ips=(db_ip)
+
     for my_ip in ${my_ips[*]};do
         sed -i.bak "s#deploy_dir=.*#deploy_dir=${deploy_dir}/python#g" ./configurations.sh.tmp
         sed -i.bak "s#python_path=.*#python_path=${deploy_dir}/python:${deploy_dir}/eggroll/python#g" ./configurations.sh.tmp
@@ -303,17 +269,13 @@ packaging_federatedml() {
 config_federatedml() {
     party_index=$1
     party_name=${party_names[party_index]}
-    if [[ "${party_name}" == "a" ]];then
-        my_ips=("${a_ips[@]}")
-    elif [[ "${party_name}" == "b" ]];then
-        my_ips=("${b_ips[@]}")
-    fi
 
     eval roll_ip=\${${party_name}_roll}
     eval federation_ip=\${${party_name}_federation}
     eval fateflow_ip=\${${party_name}_fate_flow}
     eval fateboard_ip=\${${party_name}_fateboard}
     eval proxy_ip=\${${party_name}_proxy}
+    my_ips=(roll_ip)
     for my_ip in ${my_ips[*]};do
         sed -i.bak "s#deploy_dir=.*#deploy_dir=${deploy_dir}/python#g" ./configurations.sh.tmp
         sed -i.bak "s#python_path=.*#python_path=${deploy_dir}/python:${deploy_dir}/eggroll/python#g" ./configurations.sh.tmp
@@ -557,29 +519,7 @@ eeooff
 
             if_env ${module}
             if [[ $? -eq 0 ]];then
-                #TODO: improve
-                case ${party_name} in
-                    "a")
-                        case ${module} in
-                            "jdk")
-                                module_ips=("${a_jdk[*]}")
-                            ;;
-                            "python")
-                                module_ips=("${a_python[*]}")
-                            ;;
-                        esac
-                        ;;
-                    "b")
-                        case ${module} in
-                            "jdk")
-                                module_ips=("${b_jdk[*]}")
-                            ;;
-                            "python")
-                                module_ips=("${b_python[*]}")
-                            ;;
-                        esac
-                        ;;
-                esac
+                module_ips=("${all_node_ips[*]}")
             elif [[ "${module}" == "federatedml" ]];then
                 module_ips=("${all_node_ips[*]}")
             elif [[ "${module}" == "fate_flow" ]];then

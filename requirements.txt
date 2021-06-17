@@ -63,7 +63,7 @@ llvmlite==0.25.0
 lmdb==0.94
 lxml==4.2.5
 Markdown==2.6.11
-MarkupSafe==1.0
+MarkupSafe==1.1
 matplotlib==3.0.2
 mistune==0.8.3
 multiprocess==0.70.6.1
@@ -140,3 +140,9 @@ widgetsnbextension==3.4.0
 xlrd==1.1.0
 apsw==3.9.2.post1
 deprecated==1.2.7
+pympler==0.8
+pycryptodome==3.9.9
+compress_pickle==1.2.0
+Pyfhel==2.2.5
+memory-tempfile==2.2.3
+tenseal==0.3.1

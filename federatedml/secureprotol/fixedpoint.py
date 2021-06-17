@@ -58,8 +58,8 @@ class FixedPointNumber(object):
         
         if n is None:
             n = cls.Q
-            max_int = cls.Q // 3 - 1    
-                
+            max_int = cls.Q // 3 - 1
+
         if precision is None:
             if isinstance(scalar, int) or isinstance(scalar, np.int16) or \
               isinstance(scalar, np.int32) or isinstance(scalar, np.int64):

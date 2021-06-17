@@ -32,3 +32,5 @@ __pycache__
 /audit/
 .vscode/*
 /eggroll/
+/cluster-deploy/packages/
+/cluster-deploy/output_packages/
