@@ -1,7 +1,6 @@
 import yaml
 import os
 import sys
-import subprocess
 import json
 from collections import defaultdict
 

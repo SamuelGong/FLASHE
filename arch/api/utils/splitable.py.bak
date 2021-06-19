@@ -13,9 +13,9 @@
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
 #
-import compress_pickle
-from arch.api.utils import log_utils
-LOGGER = log_utils.getLogger()
+import pickle
+
+Pickle = pickle
 
 __FATE_BIG_OBJ_MAX_PART_SIZE = "__fate_big_obj_max_part_size"
 __SUFFIX = "_part_"
@@ -45,8 +45,8 @@ def _attr_injected_meta_class(**attrs):
 
     return _AttrInjected
 
-def segment_transfer_enabled(max_part_size=0x3fff80):
-# def segment_transfer_enabled(max_part_size=0x1fffc00):
+
+def segment_transfer_enabled(max_part_size=0x1fffc00):
     """
     a metaclass, indicate objects in this class should be transfer in segments
     Args:
@@ -59,12 +59,9 @@ def maybe_split_object(obj):
     if not is_splitable_obj(obj):
         return obj, ()
 
-    obj_bytes = compress_pickle.dumps(obj, 'bz2')
+    obj_bytes = Pickle.dumps(obj, protocol=4)
     byte_size = len(obj_bytes)
-    LOGGER.info(f"[SPLIT] using compress_pickle")
-    LOGGER.info(f"[SPLIT] {byte_size}")
     num_slice = num_split_parts(obj, byte_size)
-    LOGGER.info(f"[SPLIT] {num_slice}")
     if num_slice <= 1:
         return obj, ()
     else:
@@ -79,7 +76,7 @@ def is_split_head(obj):
 
 def split_get(splits):
     obj_bytes = b''.join(splits)
-    obj = compress_pickle.loads(obj_bytes, 'bz2')
+    obj = Pickle.loads(obj_bytes)
     return obj
 
 

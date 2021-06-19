@@ -1,0 +1,4 @@
+bash: line 0: [: missing `]'
+bash: line 0: [: missing `]'
+fatal: destination path 'FLASHE' already exists and is not an empty directory.
+fatal: destination path 'FLASHE' already exists and is not an empty directory.

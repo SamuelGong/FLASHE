@@ -1,0 +1,420 @@
+{
+    "server": {
+        "AmiLaunchIndex": 0,
+        "ImageId": "ami-0b9064170e32bde34",
+        "InstanceId": "i-087ff28023adf1090",
+        "InstanceType": "r5.4xlarge",
+        "KeyName": "MyKeyPair",
+        "LaunchTime": "2021-06-19 16:06:00",
+        "Monitoring": {
+            "State": "disabled"
+        },
+        "Placement": {
+            "AvailabilityZone": "us-east-2b",
+            "GroupName": "",
+            "Tenancy": "default"
+        },
+        "PrivateDnsName": "ip-172-32-42-120.us-east-2.compute.internal",
+        "PrivateIpAddress": "172.32.42.120",
+        "ProductCodes": [],
+        "PublicDnsName": "",
+        "State": {
+            "Code": 0,
+            "Name": "pending"
+        },
+        "StateTransitionReason": "",
+        "SubnetId": "subnet-0fa65a4dd0c081e8a",
+        "VpcId": "vpc-0155de53f5f4c33b7",
+        "Architecture": "x86_64",
+        "BlockDeviceMappings": [],
+        "ClientToken": "c7f13078-dcf4-4391-bda9-aff3cb65a6e9",
+        "EbsOptimized": false,
+        "EnaSupport": true,
+        "Hypervisor": "xen",
+        "NetworkInterfaces": [
+            {
+                "Attachment": {
+                    "AttachTime": "2021-06-19 16:06:00",
+                    "AttachmentId": "eni-attach-0b2f09075d49ab961",
+                    "DeleteOnTermination": true,
+                    "DeviceIndex": 0,
+                    "Status": "attaching",
+                    "NetworkCardIndex": 0
+                },
+                "Description": "",
+                "Groups": [
+                    {
+                        "GroupName": "default",
+                        "GroupId": "sg-0344edb49871f8e8a"
+                    }
+                ],
+                "Ipv6Addresses": [],
+                "MacAddress": "06:a7:d9:c9:4f:24",
+                "NetworkInterfaceId": "eni-03de02a3e4f70d887",
+                "OwnerId": "410808120311",
+                "PrivateIpAddress": "172.32.42.120",
+                "PrivateIpAddresses": [
+                    {
+                        "Primary": true,
+                        "PrivateIpAddress": "172.32.42.120"
+                    }
+                ],
+                "SourceDestCheck": true,
+                "Status": "in-use",
+                "SubnetId": "subnet-0fa65a4dd0c081e8a",
+                "VpcId": "vpc-0155de53f5f4c33b7",
+                "InterfaceType": "interface"
+            }
+        ],
+        "RootDeviceName": "/dev/sda1",
+        "RootDeviceType": "ebs",
+        "SecurityGroups": [
+            {
+                "GroupName": "default",
+                "GroupId": "sg-0344edb49871f8e8a"
+            }
+        ],
+        "SourceDestCheck": true,
+        "StateReason": {
+            "Code": "pending",
+            "Message": "pending"
+        },
+        "Tags": [
+            {
+                "Key": "Name",
+                "Value": "flashe.1"
+            }
+        ],
+        "VirtualizationType": "hvm",
+        "CpuOptions": {
+            "CoreCount": 8,
+            "ThreadsPerCore": 2
+        },
+        "CapacityReservationSpecification": {
+            "CapacityReservationPreference": "open"
+        },
+        "MetadataOptions": {
+            "State": "pending",
+            "HttpTokens": "optional",
+            "HttpPutResponseHopLimit": 1,
+            "HttpEndpoint": "enabled"
+        },
+        "EnclaveOptions": {
+            "Enabled": false
+        }
+    },
+    "client": [
+        {
+            "AmiLaunchIndex": 0,
+            "ImageId": "ami-0b9064170e32bde34",
+            "InstanceId": "i-05568ee5429ab7a6a",
+            "InstanceType": "c5.4xlarge",
+            "KeyName": "MyKeyPair",
+            "LaunchTime": "2021-06-19 16:06:02",
+            "Monitoring": {
+                "State": "disabled"
+            },
+            "Placement": {
+                "AvailabilityZone": "us-east-2b",
+                "GroupName": "",
+                "Tenancy": "default"
+            },
+            "PrivateDnsName": "ip-172-32-34-76.us-east-2.compute.internal",
+            "PrivateIpAddress": "172.32.34.76",
+            "ProductCodes": [],
+            "PublicDnsName": "",
+            "State": {
+                "Code": 0,
+                "Name": "pending"
+            },
+            "StateTransitionReason": "",
+            "SubnetId": "subnet-0fa65a4dd0c081e8a",
+            "VpcId": "vpc-0155de53f5f4c33b7",
+            "Architecture": "x86_64",
+            "BlockDeviceMappings": [],
+            "ClientToken": "42908609-7cf1-4030-aa9d-91e72b6d9b77",
+            "EbsOptimized": false,
+            "EnaSupport": true,
+            "Hypervisor": "xen",
+            "NetworkInterfaces": [
+                {
+                    "Attachment": {
+                        "AttachTime": "2021-06-19 16:06:02",
+                        "AttachmentId": "eni-attach-0370dbdb734e46d99",
+                        "DeleteOnTermination": true,
+                        "DeviceIndex": 0,
+                        "Status": "attaching",
+                        "NetworkCardIndex": 0
+                    },
+                    "Description": "",
+                    "Groups": [
+                        {
+                            "GroupName": "default",
+                            "GroupId": "sg-0344edb49871f8e8a"
+                        }
+                    ],
+                    "Ipv6Addresses": [],
+                    "MacAddress": "06:46:89:c6:50:c0",
+                    "NetworkInterfaceId": "eni-0f7aa3450b21dd741",
+                    "OwnerId": "410808120311",
+                    "PrivateIpAddress": "172.32.34.76",
+                    "PrivateIpAddresses": [
+                        {
+                            "Primary": true,
+                            "PrivateIpAddress": "172.32.34.76"
+                        }
+                    ],
+                    "SourceDestCheck": true,
+                    "Status": "in-use",
+                    "SubnetId": "subnet-0fa65a4dd0c081e8a",
+                    "VpcId": "vpc-0155de53f5f4c33b7",
+                    "InterfaceType": "interface"
+                }
+            ],
+            "RootDeviceName": "/dev/sda1",
+            "RootDeviceType": "ebs",
+            "SecurityGroups": [
+                {
+                    "GroupName": "default",
+                    "GroupId": "sg-0344edb49871f8e8a"
+                }
+            ],
+            "SourceDestCheck": true,
+            "StateReason": {
+                "Code": "pending",
+                "Message": "pending"
+            },
+            "Tags": [
+                {
+                    "Key": "Name",
+                    "Value": "flashe.2"
+                }
+            ],
+            "VirtualizationType": "hvm",
+            "CpuOptions": {
+                "CoreCount": 8,
+                "ThreadsPerCore": 2
+            },
+            "CapacityReservationSpecification": {
+                "CapacityReservationPreference": "open"
+            },
+            "MetadataOptions": {
+                "State": "pending",
+                "HttpTokens": "optional",
+                "HttpPutResponseHopLimit": 1,
+                "HttpEndpoint": "enabled"
+            },
+            "EnclaveOptions": {
+                "Enabled": false
+            }
+        },
+        {
+            "AmiLaunchIndex": 0,
+            "ImageId": "ami-07b068f843ec78e72",
+            "InstanceId": "i-02e0b8780f196836a",
+            "InstanceType": "c5.4xlarge",
+            "KeyName": "MyKeyPair",
+            "LaunchTime": "2021-06-19 16:06:04",
+            "Monitoring": {
+                "State": "disabled"
+            },
+            "Placement": {
+                "AvailabilityZone": "us-west-1c",
+                "GroupName": "",
+                "Tenancy": "default"
+            },
+            "PrivateDnsName": "ip-172-32-69-239.us-west-1.compute.internal",
+            "PrivateIpAddress": "172.32.69.239",
+            "ProductCodes": [],
+            "PublicDnsName": "",
+            "State": {
+                "Code": 0,
+                "Name": "pending"
+            },
+            "StateTransitionReason": "",
+            "SubnetId": "subnet-03b808eba36a89bfc",
+            "VpcId": "vpc-065e9579dccd256f5",
+            "Architecture": "x86_64",
+            "BlockDeviceMappings": [],
+            "ClientToken": "73710f10-6fae-4f4e-a255-00ce8d4fb3a7",
+            "EbsOptimized": false,
+            "EnaSupport": true,
+            "Hypervisor": "xen",
+            "NetworkInterfaces": [
+                {
+                    "Attachment": {
+                        "AttachTime": "2021-06-19 16:06:04",
+                        "AttachmentId": "eni-attach-0997752d2574e682e",
+                        "DeleteOnTermination": true,
+                        "DeviceIndex": 0,
+                        "Status": "attaching",
+                        "NetworkCardIndex": 0
+                    },
+                    "Description": "",
+                    "Groups": [
+                        {
+                            "GroupName": "default",
+                            "GroupId": "sg-06a31c4844b3b98a2"
+                        }
+                    ],
+                    "Ipv6Addresses": [],
+                    "MacAddress": "06:84:75:17:ba:81",
+                    "NetworkInterfaceId": "eni-0ae9607bb13c41aea",
+                    "OwnerId": "410808120311",
+                    "PrivateIpAddress": "172.32.69.239",
+                    "PrivateIpAddresses": [
+                        {
+                            "Primary": true,
+                            "PrivateIpAddress": "172.32.69.239"
+                        }
+                    ],
+                    "SourceDestCheck": true,
+                    "Status": "in-use",
+                    "SubnetId": "subnet-03b808eba36a89bfc",
+                    "VpcId": "vpc-065e9579dccd256f5",
+                    "InterfaceType": "interface"
+                }
+            ],
+            "RootDeviceName": "/dev/sda1",
+            "RootDeviceType": "ebs",
+            "SecurityGroups": [
+                {
+                    "GroupName": "default",
+                    "GroupId": "sg-06a31c4844b3b98a2"
+                }
+            ],
+            "SourceDestCheck": true,
+            "StateReason": {
+                "Code": "pending",
+                "Message": "pending"
+            },
+            "Tags": [
+                {
+                    "Key": "Name",
+                    "Value": "flashe.3"
+                }
+            ],
+            "VirtualizationType": "hvm",
+            "CpuOptions": {
+                "CoreCount": 8,
+                "ThreadsPerCore": 2
+            },
+            "CapacityReservationSpecification": {
+                "CapacityReservationPreference": "open"
+            },
+            "MetadataOptions": {
+                "State": "pending",
+                "HttpTokens": "optional",
+                "HttpPutResponseHopLimit": 1,
+                "HttpEndpoint": "enabled"
+            },
+            "EnclaveOptions": {
+                "Enabled": false
+            }
+        },
+        {
+            "AmiLaunchIndex": 0,
+            "ImageId": "ami-07b068f843ec78e72",
+            "InstanceId": "i-09e71f001a03dbea6",
+            "InstanceType": "c5.4xlarge",
+            "KeyName": "MyKeyPair",
+            "LaunchTime": "2021-06-19 16:06:05",
+            "Monitoring": {
+                "State": "disabled"
+            },
+            "Placement": {
+                "AvailabilityZone": "us-west-1c",
+                "GroupName": "",
+                "Tenancy": "default"
+            },
+            "PrivateDnsName": "ip-172-32-65-22.us-west-1.compute.internal",
+            "PrivateIpAddress": "172.32.65.22",
+            "ProductCodes": [],
+            "PublicDnsName": "",
+            "State": {
+                "Code": 0,
+                "Name": "pending"
+            },
+            "StateTransitionReason": "",
+            "SubnetId": "subnet-03b808eba36a89bfc",
+            "VpcId": "vpc-065e9579dccd256f5",
+            "Architecture": "x86_64",
+            "BlockDeviceMappings": [],
+            "ClientToken": "0192259c-f0fa-4b78-bd0b-42e05f558498",
+            "EbsOptimized": false,
+            "EnaSupport": true,
+            "Hypervisor": "xen",
+            "NetworkInterfaces": [
+                {
+                    "Attachment": {
+                        "AttachTime": "2021-06-19 16:06:05",
+                        "AttachmentId": "eni-attach-0926dab460fd72fa3",
+                        "DeleteOnTermination": true,
+                        "DeviceIndex": 0,
+                        "Status": "attaching",
+                        "NetworkCardIndex": 0
+                    },
+                    "Description": "",
+                    "Groups": [
+                        {
+                            "GroupName": "default",
+                            "GroupId": "sg-06a31c4844b3b98a2"
+                        }
+                    ],
+                    "Ipv6Addresses": [],
+                    "MacAddress": "06:8c:29:4a:f1:01",
+                    "NetworkInterfaceId": "eni-0ac4890caaa337b33",
+                    "OwnerId": "410808120311",
+                    "PrivateIpAddress": "172.32.65.22",
+                    "PrivateIpAddresses": [
+                        {
+                            "Primary": true,
+                            "PrivateIpAddress": "172.32.65.22"
+                        }
+                    ],
+                    "SourceDestCheck": true,
+                    "Status": "in-use",
+                    "SubnetId": "subnet-03b808eba36a89bfc",
+                    "VpcId": "vpc-065e9579dccd256f5",
+                    "InterfaceType": "interface"
+                }
+            ],
+            "RootDeviceName": "/dev/sda1",
+            "RootDeviceType": "ebs",
+            "SecurityGroups": [
+                {
+                    "GroupName": "default",
+                    "GroupId": "sg-06a31c4844b3b98a2"
+                }
+            ],
+            "SourceDestCheck": true,
+            "StateReason": {
+                "Code": "pending",
+                "Message": "pending"
+            },
+            "Tags": [
+                {
+                    "Key": "Name",
+                    "Value": "flashe.4"
+                }
+            ],
+            "VirtualizationType": "hvm",
+            "CpuOptions": {
+                "CoreCount": 8,
+                "ThreadsPerCore": 2
+            },
+            "CapacityReservationSpecification": {
+                "CapacityReservationPreference": "open"
+            },
+            "MetadataOptions": {
+                "State": "pending",
+                "HttpTokens": "optional",
+                "HttpPutResponseHopLimit": 1,
+                "HttpEndpoint": "enabled"
+            },
+            "EnclaveOptions": {
+                "Enabled": false
+            }
+        }
+    ]
+}

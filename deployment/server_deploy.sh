@@ -55,3 +55,5 @@ adapt
 config
 package
 deploy
+
+echo "[SUCCEEDED] Finish"

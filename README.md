@@ -1,6 +1,8 @@
 # FLASHE
 
-This repository contains scripts and instructions for reproducing the experiments in our SoCC '21 paper [FLASHE](#). This project is built atop [FATE v1.2.0](https://github.com/FederatedAI/FATE/tree/v1.2.0), an open-source industrial platform crafted by [WeBank](https://www.webank.com/#/home) for cross-silo federated learning. You are welcome to either trace the GUI commit records or use CLI commands like `git diff` to see what have been changed since the (virtual) fork (i.e., the [first commit](https://github.com/SamuelGong/FLASHE/commit/bacce3035f5972d4ec3f59e42c14152090664895)).
+This repository contains scripts and instructions for reproducing the experiments in our **SoCC '21** paper [FLASHE](#).
+FLASHE is integrated as a pluggable module in [FATE v1.2.0](https://github.com/FederatedAI/FATE/tree/v1.2.0), an open-source industrial platform crafted by [WeBank](https://www.webank.com/#/home) for cross-silo federated learning.
+You may want to use commands like `git diff` to see what have been changed since the fork (i.e., the [first commit](https://github.com/SamuelGong/FLASHE/commit/bacce3035f5972d4ec3f59e42c14152090664895)).
 
 # Overview
 
@@ -37,7 +39,7 @@ Please go to `./simulation` directory and follow the simulation [README](./simul
 Repo Root
 |---- arch                  # (FATE internal)
 |---- cluster-deploy        # (FATE internal)
-|---- dataset
+|---- examples
 |---- deployment
 |---- fate_flow             # (FATE internal)
 |---- federatedml           # (FATE internal)
@@ -59,7 +61,7 @@ Please consider to cite our paper if you use the code or data in your research p
 ```
 
 # Acknowledgement
-Many thanks to [Chengliang Zhang](https://github.com/marcoszh) and [Junzhe Xia](#) for their insightful engineering advice regarding FATE.
+Thanks to [Chengliang Zhang](https://github.com/marcoszh) and [Junzhe Xia](#) for their engineering advice regarding FATE. Thanks to [Minchen Yu](https://github.com/MincYu) for his suggestions on experiment automation.
 
 # Contact
 Zhifeng Jiang (zjiangaj@cse.ust.hk)

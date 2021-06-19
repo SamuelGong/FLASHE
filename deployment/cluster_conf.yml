@@ -1,25 +1,19 @@
+---
 # Configuration file of FLASHE cluster deployment
-
-# ip address of the server
-server_ip: 172.32.40.185
-
-# ip addresses of clients
-# (In FATE, one client should be statically assigned as the leader
-# which does not differ from other clients in function except that
-# she is the one who initiates a federation)
-leader_client_ip: 172.32.31.240
-other_clients_ips:
-    - 172.32.11.116
-    - 172.32.5.231
-    - 172.32.30.240
-    - 172.32.41.41
-    - 172.32.40.104
-    - 172.32.76.236
-    - 172.32.75.125
-    - 172.32.138.4
-    - 172.32.131.35
 
 # currently the name of ssh_user in all nodes is assumed to be consistent
 # and the user with that name should have sudo privilege for each node
 auth:
-    common_ssh_user: ubuntu
+  common_ssh_user: ubuntu
+
+# ip address of the server
+server_ip: 172.32.42.120
+
+# ip addresses of clients
+# In FATE, one client should be statically assigned as the leader
+# which does not differ from other clients in function except that
+# she is the one who initiates a federation
+leader_client_ip: 172.32.34.76
+other_clients_ips:
+- 172.32.69.239
+- 172.32.65.22

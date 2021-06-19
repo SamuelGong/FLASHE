@@ -3,15 +3,31 @@
 This folder contains scripts and instructions for reproducing the experiments conducted under geo-distributed settings in our SoCC '21 paper. 
 Our training evaluations rely on a distributed setting of ***multiple machines*** via the Parameter-Server (PS) architecture.
 In our paper, we used 10 `c5.4xlarge` machines to simulate 10 participants and 1 `r5.4xlarge` machine to emulate the server in each round.
-For readers' reference, their configurations are:
+To be exact, their configurations are:
 
 * OS kernel image: `ubuntu-bionic-18.04-amd64-server-20200903`;
 * Computational capabilities: `16` vCPUs, `32` GB (`128` GB) memory (with `16G` swap) and `100` GiB SSD Storage.
 
+## Overview
 
-## Step 1: Cluster Setup
+* [Prerequisites](#prerequisites)
+* [Cluster Setup](#cluster-setup)
+* [Job Configuration](#job-configuration)
+* [Evaluation](#evaluation)
 
-Note that some commands in the scripts mentioned below may be ***intrusive*** to your systems. For example, it needs to extend some system limits, install dependencies in a global sense and configure passwordless SSH login at all existing nodes, as required by in FATE's [normal deployment process](https://github.com/FederatedAI/FATE/tree/v1.2.0/cluster-deploy). Please select an appropriate testbed environment to deploy such a system. 
+## Prerequisites
+
+In order to have FATE v1.2.0 run at your cluster, in addition to using similar machines as what we played with, the cluster also needs to meet the following requirements:
+1. Nodes within should be able to reach one another via **private IPs**. In other words, what you fill in `./cluster_conf.yml` should be private IPs instead of public ones.
+2. Nodes should be able to perform remote login to one another **without** password or identification files specified.
+
+If you are using resources offered by AWS, we are happy to provide you with some handy scripts at `../utils`, which should help you prepare an eligible cluster from scratch. Check out the [README](../utils/README.md) for practical instructions!
+
+## Cluster Setup
+
+Once you have established a several-node cluster which meets the prerequisites mentioned above,
+things become simple as we have packed every necessary setup commands into one script or two. 
+*Note that some commands related to FATE v1.2.0's [deployment](https://github.com/FederatedAI/FATE/tree/v1.2.0/cluster-deploy) may be ***intrusive*** to your systems. For example, it will extend some system limits and install dependencies in a global sense.*
 
 1. At ***all nodes (server & clients)***, execute the following command.
     ```bash
@@ -22,11 +38,11 @@ Note that some commands in the scripts mentioned below may be ***intrusive*** to
     source ./server_deploy.sh cluster_conf.yml
     ```
 
-## Step 2: Setting Job Configuration
+## Job Configuration
 
 
 
-## Step 3: Run Experiment and Validate Results
+## Evaluation
 
 ***NOTE: .***
 

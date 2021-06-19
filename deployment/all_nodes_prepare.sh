@@ -39,4 +39,8 @@ if [ ! -f "libgflags.so.2" ];then
     ln -s libgflags.so.2.2 libgflags.so.2
 fi
 
+# FLASHE-related
+cat ./cluster-deploy/original_requirements.txt > ./requirements.txt
+cat ./deployment/additional_requirements.txt >> ./requirements.txt
+
 echo "[SUCCEEDED] Finish"

@@ -1,0 +1,17 @@
+# This file is what you used authenticate SSH login to each node
+# and it is assumed to be located in ~/.ssh/ in your local PC
+local_key: MyKeyPair.pem
+
+##########################################################################
+# The following two key-value pairs only need modification
+# if you want to create SSH key at Github for each node in the cluster
+# i.e., no need to change them if you merely want to realize passwordless login
+githubuser: SamuelGong
+
+# To use the Github API via CLI, a personal access
+# token is needed for authentication. Please check out
+# https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token
+# for details. Make sure you have at least checked the scopes named
+# "repo" and "admin:public_key".
+# Save the token at some safe folder which you mention below
+personal_access_token_path: ~/.ssh/github-repo-public-key.token

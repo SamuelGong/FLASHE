@@ -1,0 +1,33 @@
+# Specify the instance types for the server and clients, respectively
+server_type: r5.4xlarge
+client_type: c5.4xlarge
+
+# Specify an available subnet id for each region
+# If there are multiple regions, these subnets should be able to
+# connect with each other with the help of VPC Peering
+subnet:
+    eu-west-2: subnet-0f1c9e7846cef499a # London
+    ap-northeast-1: subnet-06fdd082de1107483 # Tokyo
+    us-east-2: subnet-0fa65a4dd0c081e8a # Ohio
+    us-west-1: subnet-03b808eba36a89bfc # California
+    ap-southeast-2: subnet-0daf535bca6786d49 # Syndey
+
+# Specify the image id for each region
+# we have to do so as the ids even for
+# the same type of image vary across region...
+image:
+    # Ubuntu Server 18.04 LTS (HVM), SSD Volume Type, 64-bit x86
+    # Effective Date: Jun 20, 2021 (These may change over time)
+    eu-west-2: ami-09a56048b08f94cdf
+    ap-northeast-1: ami-0fe22bffdec36361c
+    us-east-2: ami-0b9064170e32bde34
+    us-west-1: ami-07b068f843ec78e72
+    ap-southeast-2: ami-0f39d06d145e9bb63
+
+# Specify the locations and numbers
+server:
+    region: us-east-2
+clients:
+    region:
+        us-east-2: 1
+        us-west-1: 2

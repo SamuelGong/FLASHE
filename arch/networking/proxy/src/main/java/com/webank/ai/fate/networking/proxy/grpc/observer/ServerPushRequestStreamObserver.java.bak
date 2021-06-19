@@ -37,7 +37,6 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.ThreadContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.annotation.Scope;
@@ -53,7 +52,6 @@ public class ServerPushRequestStreamObserver implements StreamObserver<Proxy.Pac
     private static final Logger LOGGER = LogManager.getLogger(ServerPushRequestStreamObserver.class);
     private static final Logger AUDIT = LogManager.getLogger("audit");
     private static final Logger DEBUGGING = LogManager.getLogger("debugging");
-    private static final Logger FOOTPRINT = LogManager.getLogger("footprint");
     private final StreamObserver<Proxy.Metadata> responseObserver;
     @Autowired
     private ApplicationEventPublisher applicationEventPublisher;
@@ -85,7 +83,6 @@ public class ServerPushRequestStreamObserver implements StreamObserver<Proxy.Pac
     private boolean isAuditEnabled;
     private boolean isDebugEnabled;
     private AtomicLong ackCount;
-    private String myLastJobId;
 
     public ServerPushRequestStreamObserver(Pipe pipe, StreamObserver<Proxy.Metadata> responseObserver) {
         this.pipe = pipe;
@@ -146,22 +143,6 @@ public class ServerPushRequestStreamObserver implements StreamObserver<Proxy.Pac
         if (noError) {
             pipe.write(packet);
             ackCount.incrementAndGet();
-
-            if (packet.getBody() != null && packet.getBody().getValue() != null) {
-                int begin_idx = oneLineStringInputMetadata.indexOf("taskId");
-                String temp = oneLineStringInputMetadata.substring(begin_idx + 9);
-                int end_idx = temp.indexOf('_');
-                String jobId = temp.substring(0, end_idx);
-                myLastJobId = jobId;
-
-                ThreadContext.put("jobId", jobId);
-
-                int data_size = packet.getBody().getValue().size();
-                int whole_packet_size = packet.getSerializedSize();
-                FOOTPRINT.info("[SPR] size: {}, length: {}, metadata: {}",
-                    whole_packet_size, data_size, oneLineStringInputMetadata);
-            }
-
             //LOGGER.info("myCoordinator: {}, Proxy.Packet coordinator: {}", myCoordinator, packet.getHeader().getSrc().getCoordinator());
             if (isAuditEnabled && packet.getHeader().getSrc().getPartyId().equals(myCoordinator)) {
                 AUDIT.info(toStringUtils.toOneLineString(packet));
@@ -186,7 +167,6 @@ public class ServerPushRequestStreamObserver implements StreamObserver<Proxy.Pac
                 }
                 DEBUGGING.info("-------------");
             }
-
             //LOGGER.info("push server received size: {}, data size: {}", packet.getSerializedSize(), packet.getBody().getValue().size());
         }
     }

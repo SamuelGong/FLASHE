@@ -123,7 +123,7 @@ public class TransferJobScheduler implements Runnable {
                             transferMetaId, type.name(), processor.getClass().getSimpleName());
 
                     CountDownLatch countDownLatch = new CountDownLatch(1);
-                    ListenableFuture<?> listenableFuture = ThreadPoolTaskExecutorUtil.submitListenable(transferJobSchedulerExecutor,processor, new int[]{500,1000,5000,10000,50000,100000},new int[]{5,5,5,5,5,5});
+                    ListenableFuture<?> listenableFuture = ThreadPoolTaskExecutorUtil.submitListenable(transferJobSchedulerExecutor,processor, new int[]{500,1000,5000},new int[]{5,5,3});
                     listenableFuture.addCallback(new ListenableFutureCallback<Object>() {
                         @Override
                         public void onFailure(Throwable throwable) {

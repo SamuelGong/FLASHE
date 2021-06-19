@@ -101,7 +101,7 @@ public class RecvProcessor extends BaseTransferProcessor {
 
             TransferBrokerConsumer consumer = transferServiceFactory.createTransferBrokerConsumer();
             transferBroker.addSubscriber(consumer);
-            ThreadPoolTaskExecutorUtil.submitListenable(ioConsumerPool,consumer,new int[]{500,1000,5000,10000,50000,100000},new int[]{5,5,5,5,5,5});
+            ThreadPoolTaskExecutorUtil.submitListenable(ioConsumerPool,consumer,new int[]{500,1000,5000},new int[]{5,5,3});
 
             //ioConsumerPool.submit(consumer);
 

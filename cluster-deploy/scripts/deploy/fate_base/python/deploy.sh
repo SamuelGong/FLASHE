@@ -48,7 +48,7 @@ pip_env_packaging() {
     get_module_package ${source_code_dir} "${module_name} pip packages" pip-packages-fate-${python_version}.tar.gz
     tar xzf pip-packages-fate-${python_version}.tar.gz
     rm -rf pip-packages-fate-${python_version}.tar.gz
-    cp ${source_code_dir}/requirements.txt ./
+    cp ${source_code_dir}/cluster-deploy/requirements.txt ./
 }
 
 conda_env_packaging() {

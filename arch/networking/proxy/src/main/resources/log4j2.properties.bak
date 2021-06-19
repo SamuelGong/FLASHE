@@ -20,8 +20,6 @@ property.logDir=logs
 property.project=fate
 property.module=proxy
 property.logPattern=[%-5level] %d{yyyy-MM-dd}T%d{HH:mm:ss,SSS} [%t] [%c{1}:%L] - %msg%n
-property.logPattern2=%d{yyyy-MM-dd} %d{HH:mm:ss,SSS} - %msg%n
-property.footprint=footprint
 
 # console
 appender.console.type=Console
@@ -41,18 +39,6 @@ appender.file.policies.time.type=TimeBasedTriggeringPolicy
 appender.file.policies.time.interval=1
 appender.file.policies.time.modulate=true
 appender.file.strategy.type=DefaultRolloverStrategy
-
-# footprint
-appender.footprint.type=Routing
-appender.footprint.name=LOGFOOTPRINT
-appender.footprint.routes.type=Routes
-appender.footprint.routes.pattern=$${ctx:jobId}
-appender.footprint.routes.route.type=Route
-appender.footprint.routes.route.file.type=File
-appender.footprint.routes.route.file.name=LOG${ctx:jobId}
-appender.footprint.routes.route.file.fileName=${logDir}/${footprint}/${ctx:jobId}
-appender.footprint.routes.route.file.layout.type=PatternLayout
-appender.footprint.routes.route.file.layout.pattern=${logPattern2}
 
 # debug
 appender.debugging.type=RollingFile
@@ -94,7 +80,7 @@ appender.stat.policies.time.modulate=true
 appender.stat.strategy.type=DefaultRolloverStrategy
 
 # loggers
-loggers=file, debugging, audit, stat, footprint
+loggers=file, debugging, audit, stat
 
 # logger - file
 logger.file.name=file
@@ -129,10 +115,3 @@ rootLogger.level=info
 rootLogger.appenderRefs=stdout, file
 rootLogger.appenderRef.stdout.ref=STDOUT
 rootLogger.appenderRef.file.ref=LOGFILE
-
-# logger - footprint
-logger.footprint.name=footprint
-logger.footprint.level=info
-logger.footprint.appenderRefs=footprint
-logger.footprint.appenderRef.footprint.ref=LOGFOOTPRINT
-logger.footprint.additivity=false

@@ -28,7 +28,6 @@ import io.grpc.stub.StreamObserver;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.ThreadContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
@@ -44,7 +43,6 @@ public class ClientUnaryCallResponseStreamObserver implements StreamObserver<Pro
     private static final Logger LOGGER = LogManager.getLogger(ClientUnaryCallResponseStreamObserver.class);
     private static final Logger DEBUGGING = LogManager.getLogger("debugging");
     private static final Logger AUDIT = LogManager.getLogger("audit");
-    private static final Logger FOOTPRINT = LogManager.getLogger("footprint");
     private final CountDownLatch finishLatch;
     @Autowired
     private StatsManager statsManager;
@@ -57,7 +55,6 @@ public class ClientUnaryCallResponseStreamObserver implements StreamObserver<Pro
     private Pipe pipe;
     private boolean isInited;
     private AtomicLong ackCount;
-    private String myLastJobId;
 
     public ClientUnaryCallResponseStreamObserver(Pipe pipe, CountDownLatch finishLatch, Proxy.Metadata metadata) {
         this.finishLatch = finishLatch;
@@ -98,31 +95,10 @@ public class ClientUnaryCallResponseStreamObserver implements StreamObserver<Pro
             AUDIT.info(toStringUtils.toOneLineString(packet));
         }
 
+
         if (packet.getBody() != null && packet.getBody().getValue() != null) {
-//             Proxy.Metadata myMeta = packet.getHeader();
             ByteString value = packet.getBody().getValue();
             streamStat.increment(value.size());
-
-//             if (myMeta != null) {
-//                 String myMetaStr = toStringUtils.toOneLineString(myMeta);
-//                 int begin_idx = myMetaStr.indexOf("taskId");
-//                 String temp = myMetaStr.substring(begin_idx + 9);
-//                 int end_idx = temp.indexOf('"');
-//                 int temp_idx = temp.indexOf('_');
-//                 if (temp_idx != -1) {
-//                     end_idx = temp_idx;
-//                 }
-//                 String jobId = temp.substring(0, end_idx);
-//                 myLastJobId = jobId;
-//
-//                 ThreadContext.put("jobId", jobId);
-//                 FOOTPRINT.info("[CUCR] length: {}, metadata: {}",
-//                     value.size(), myMetaStr);
-//             } else if (myLastJobId != null) {
-//                 ThreadContext.put("jobId", myLastJobId);
-//                 FOOTPRINT.info("[CUCR] length: {}, metadata: {}",
-//                     value.size(), "");
-//             }
         }
 
         // LOGGER.info("[UNARYCALL][OBSERVER][ONNEXT] result: {}", packet.getBody().getValue().toStringUtf8());
