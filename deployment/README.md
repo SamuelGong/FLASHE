@@ -17,17 +17,17 @@ To be exact, their configurations are:
 
 ## Prerequisites
 
-In order to have FATE v1.2.0 run at your cluster, in addition to using similar machines as what we played with, the cluster also needs to meet the following requirements:
-1. Nodes within should be able to reach one another via **private IPs**. In other words, what you fill in `./cluster_conf.yml` should be private IPs instead of public ones.
+In order to have FATE v1.2.0 run at your cluster, in addition to using similar computational capabilities as what we played with, the network connectivity also needs to meet the following requirements:
+1. Nodes within should be able to reach one another via **private IPs**.
 2. Nodes should be able to perform remote login to one another **without** password or identification files specified.
 
-If you are using resources offered by AWS, we are happy to provide you with some handy scripts at `../utils`, which should help you prepare an eligible cluster from scratch. Check out the [README](../utils/README.md) for practical instructions!
+If you are willing to renting resources offered by AWS like we did, we are happy to provide you with some handy scripts at `../utils`, which should help you prepare an eligible cluster from scratch. Check out the [README](../utils/README.md) there for details.
 
 ## Cluster Setup
 
-Once you have established a several-node cluster which meets the prerequisites mentioned above,
-things become simple as we have packed every necessary setup commands into one script or two. 
-*Note that some commands related to FATE v1.2.0's [deployment](https://github.com/FederatedAI/FATE/tree/v1.2.0/cluster-deploy) may be ***intrusive*** to your systems. For example, it will extend some system limits and install dependencies in a global sense.*
+Once you have successfully established a several-node cluster which meets the two aforementioned prerequisites,
+be relaxed as all the necessary setup commands have been packed into one script or two. 
+*Note that some commands related to FATE v1.2.0's [deployment](https://github.com/FederatedAI/FATE/tree/v1.2.0/cluster-deploy) may be ***intrusive*** to your systems. For example, it will extend some system limits and install dependencies in a global sense. If you have concerns about these, you may want to delve into the script first and see if you should go on with the environment.*
 
 1. At ***all nodes (server & clients)***, execute the following command.
     ```bash

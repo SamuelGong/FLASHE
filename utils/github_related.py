@@ -22,7 +22,7 @@ def git_clone():
 
     for ip in public_ips:
         print(f"git clone at {ip}...")
-        cmd = f"ssh ubuntu@{ip} '[ -d FLASHE] || git clone {repo_url}'"
+        cmd = f"ssh ubuntu@{ip} '[ -d FLASHE ] || git clone {repo_url}' &"
         with open(log_path, 'a') as fout:
             subprocess.Popen(cmd, shell=True, stdout=fout, stderr=fout)
 

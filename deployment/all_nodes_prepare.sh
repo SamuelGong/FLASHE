@@ -1,4 +1,5 @@
 #!/bin/bash
+PROJECT_DIR=`pwd`/../
 
 # cannot even proceed with FATE if not having sudo privilege
 echo "[INFO] Check sudo privilege..."
@@ -32,14 +33,15 @@ sudo apt update
 sudo apt-get install -y gcc g++ make openssl supervisor libgmp-dev  libmpfr-dev libmpc-dev libaio1 libaio-dev numactl autoconf automake libtool libffi-dev libssl1.0.0 libssl-dev liblz4-1 liblz4-dev liblz4-1-dbg liblz4-tool  zlib1g zlib1g-dbg zlib1g-dev libgflags-dev
 cd /usr/lib/x86_64-linux-gnu
 if [ ! -f "libssl.so.10" ];then
-    ln -s libssl.so.1.0.0 libssl.so.10
-    ln -s libcrypto.so.1.0.0 libcrypto.so.10
+    sudo ln -s libssl.so.1.0.0 libssl.so.10
+    sudo ln -s libcrypto.so.1.0.0 libcrypto.so.10
 fi
 if [ ! -f "libgflags.so.2" ];then
-    ln -s libgflags.so.2.2 libgflags.so.2
+    sudo ln -s libgflags.so.2.2 libgflags.so.2
 fi
 
 # FLASHE-related
+cd ${PROJECT_DIR}
 cat ./cluster-deploy/original_requirements.txt > ./requirements.txt
 cat ./deployment/additional_requirements.txt >> ./requirements.txt
 
