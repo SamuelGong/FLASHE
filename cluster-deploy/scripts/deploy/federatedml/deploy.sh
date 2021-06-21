@@ -53,7 +53,7 @@ config() {
 	cp ${source_code_dir}/cluster-deploy/scripts/deploy/services.sh ./
 	cp ${source_code_dir}/cluster-deploy/scripts/deploy/init_env.sh ./
 	sed -i.bak "s#PYTHONPATH=.*#PYTHONPATH=${python_path}#g" ./init_env.sh
-	sed -i.bak "s#venv=.*#venv=${venv_dir}#g" ./init_env.sh
+	sed -i.bak "s#venv=.*#venv=${venv_dir}#g"d ./init_env.sh
     sed -i.bak "s#JAVA_HOME=.*#JAVA_HOME=${java_dir}#g" ./init_env.sh
     rm -rf ./init_env.sh.bak
 	return 0

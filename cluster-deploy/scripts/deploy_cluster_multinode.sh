@@ -190,7 +190,7 @@ config_mysql() {
     eval proxy_ip=\${${party_name}_proxy}
     eval metaservice_ip=\${${party_name}_metaservice}
     eval egg_ips=\${${party_name}_egg[*]}
-    party_ips =(my_ip)
+    party_ips=(my_ip)
 
     sed -i.bak "s#deploy_dir=.*#deploy_dir=${deploy_dir}/common#g" ./configurations.sh.tmp
     sed -i.bak "s/mysql_ip=.*/mysql_ip=${db_ip}/g" ./configurations.sh.tmp

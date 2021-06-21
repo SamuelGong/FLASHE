@@ -26,7 +26,7 @@ def multinode_cluster_configurations(yaml_file):
         all_ips.append(ip)
     common_ssh_user = yaml_conf['auth']['common_ssh_user']
 
-    lines = ["#!/bin/bash\n", f'user={common_ssh_user}', "deploy_dir=/data/projects/fate",
+    lines = ["#!/bin/bash\n", f"user={common_ssh_user}", "deploy_dir=/data/projects/fate",
              "db_auth=(root fate_dev)", "redis_password=fate_dev", "cxx_compile_flag=false\n"]
 
     party_list = []

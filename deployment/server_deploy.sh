@@ -1,4 +1,4 @@
-CONFIG_FILE=$1
+CONFIG_FILE=cluster_conf.yml
 
 # These are necessary to accommodate FATE's CentOS scripts
 # when you are running atop Ubuntu
@@ -8,6 +8,7 @@ adapt() {
     wget https://webank-ai-1251170195.cos.ap-guangzhou.myqcloud.com/jdk-8u192-linux-x64.tar.gz
     sudo mkdir -p /usr/lib/jvm/
     sudo tar xzf jdk-8u192-linux-x64.tar.gz -C /usr/lib/jvm/
+    rm jdk-8u192-linux-x64.tar.gz
     JAVA_HOME=/usr/lib/jvm/jdk1.8.0_192/
     sudo update-alternatives --install /usr/bin/java java ${JAVA_HOME%*/}/bin/java 20000
     sudo update-alternatives --install /usr/bin/javac javac ${JAVA_HOME%*/}/bin/javac 20000
@@ -16,6 +17,7 @@ adapt() {
   if ! command -v mvn &> /dev/null; then
     wget https://www-us.apache.org/dist/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz -P /tmp
     sudo tar xf /tmp/apache-maven-*.tar.gz -C /opt
+    rm /tmp/apache-maven-*.tar.gz
     sudo ln -s /opt/apache-maven-3.6.3 /opt/maven
     sudo cp maven.sh /etc/profile.d/maven.sh
     sudo chmod +x /etc/profile.d/maven.sh
