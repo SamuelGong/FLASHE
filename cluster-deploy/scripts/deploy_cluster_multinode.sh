@@ -190,7 +190,7 @@ config_mysql() {
     eval proxy_ip=\${${party_name}_proxy}
     eval metaservice_ip=\${${party_name}_metaservice}
     eval egg_ips=\${${party_name}_egg[*]}
-    party_ips=(my_ip)
+    party_ips=(${my_ip})
 
     sed -i.bak "s#deploy_dir=.*#deploy_dir=${deploy_dir}/common#g" ./configurations.sh.tmp
     sed -i.bak "s/mysql_ip=.*/mysql_ip=${db_ip}/g" ./configurations.sh.tmp
@@ -243,7 +243,7 @@ config_fate_flow() {
 
     eval db_ip=\${${party_name}_mysql}
     eval redis_ip=\${${party_name}_redis}
-    my_ips=(db_ip)
+    my_ips=(${db_ip})
 
     for my_ip in ${my_ips[*]};do
         sed -i.bak "s#deploy_dir=.*#deploy_dir=${deploy_dir}/python#g" ./configurations.sh.tmp
@@ -275,7 +275,7 @@ config_federatedml() {
     eval fateflow_ip=\${${party_name}_fate_flow}
     eval fateboard_ip=\${${party_name}_fateboard}
     eval proxy_ip=\${${party_name}_proxy}
-    my_ips=(roll_ip)
+    my_ips=(${roll_ip})
     for my_ip in ${my_ips[*]};do
         sed -i.bak "s#deploy_dir=.*#deploy_dir=${deploy_dir}/python#g" ./configurations.sh.tmp
         sed -i.bak "s#python_path=.*#python_path=${deploy_dir}/python:${deploy_dir}/eggroll/python#g" ./configurations.sh.tmp

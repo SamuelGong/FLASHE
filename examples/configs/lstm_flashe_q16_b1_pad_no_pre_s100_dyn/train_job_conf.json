@@ -1,0 +1,241 @@
+{
+    "initiator": {
+        "role": "guest",
+        "party_id": 10000
+    },
+    "job_parameters": {
+        "work_mode": 1
+    },
+    "role": {
+        "guest": [
+            9999
+        ],
+        "host": [
+            10000
+        ],
+        "arbiter": [
+            99999
+        ]
+    },
+    "role_parameters": {
+        "guest": {
+            "args": {
+                "data": {
+                    "train_data": [
+                        {
+                            "name": "homo_guest",
+                            "namespace": "vehicle_scale"
+                        }
+                    ]
+                }
+            },
+            "dataio_0": {
+                "with_label": [
+                    false
+                ],
+                "label_name": [
+                    "y"
+                ],
+                "label_type": [
+                    "int"
+                ],
+                "output_format": [
+                    "dense"
+                ]
+            }
+        },
+        "host": {
+            "args": {
+                "data": {
+                    "train_data": [
+                        {
+                            "name": "homo_host",
+                            "namespace": "vehicle_scale"
+                        },
+                        {
+                            "name": "homo_host",
+                            "namespace": "vehicle_scale"
+                        }
+                    ]
+                }
+            },
+            "dataio_0": {
+                "with_label": [
+                    false,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                ],
+                "label_name": [
+                    "y",
+                    "y"
+                ],
+                "label_type": [
+                    "int",
+                    "int"
+                ],
+                "output_format": [
+                    "dense",
+                    "dense"
+                ]
+            }
+        }
+    },
+    "algorithm_parameters": {
+        "homo_nn_0": {
+            "config_type": "keras",
+            "nn_define": {
+                "class_name": "Sequential",
+                "config": {
+                    "name": "lstm",
+                    "layers": [
+                        {
+                            "class_name": "Embedding",
+                            "config": {
+                                "name": "embedding",
+                                "trainable": true,
+                                "batch_input_shape": [
+                                    null,
+                                    80
+                                ],
+                                "dtype": "float32",
+                                "input_dim": 83,
+                                "output_dim": 512,
+                                "embeddings_initializer": {
+                                    "class_name": "RandomUniform",
+                                    "config": {
+                                        "minval": -0.05,
+                                        "maxval": 0.05,
+                                        "seed": null
+                                    }
+                                },
+                                "embeddings_regularizer": null,
+                                "activity_regularizer": null,
+                                "embeddings_constraint": null,
+                                "mask_zero": true,
+                                "input_length": 80
+                            }
+                        },
+                        {
+                            "class_name": "GRU",
+                            "config": {
+                                "name": "gru",
+                                "trainable": true,
+                                "dtype": "float32",
+                                "return_sequences": true,
+                                "return_state": false,
+                                "go_backwards": false,
+                                "stateful": false,
+                                "unroll": false,
+                                "time_major": false,
+                                "units": 256,
+                                "activation": "tanh",
+                                "recurrent_activation": "sigmoid",
+                                "use_bias": true,
+                                "kernel_initializer": {
+                                    "class_name": "VarianceScaling",
+                                    "config": {
+                                        "scale": 2.0,
+                                        "mode": "fan_in",
+                                        "distribution": "truncated_normal",
+                                        "seed": null
+                                    }
+                                },
+                                "recurrent_initializer": {
+                                    "class_name": "Orthogonal",
+                                    "config": {
+                                        "gain": 1.0,
+                                        "seed": null
+                                    }
+                                },
+                                "bias_initializer": {
+                                    "class_name": "Zeros",
+                                    "config": {}
+                                },
+                                "kernel_regularizer": null,
+                                "recurrent_regularizer": null,
+                                "bias_regularizer": null,
+                                "activity_regularizer": null,
+                                "kernel_constraint": null,
+                                "recurrent_constraint": null,
+                                "bias_constraint": null,
+                                "dropout": 0.2,
+                                "recurrent_dropout": 0.0,
+                                "implementation": 2,
+                                "reset_after": true
+                            }
+                        },
+                        {
+                            "class_name": "Dense",
+                            "config": {
+                                "name": "dense",
+                                "trainable": true,
+                                "dtype": "float32",
+                                "units": 83,
+                                "activation": "linear",
+                                "use_bias": true,
+                                "kernel_initializer": {
+                                    "class_name": "GlorotUniform",
+                                    "config": {
+                                        "seed": null
+                                    }
+                                },
+                                "bias_initializer": {
+                                    "class_name": "Zeros",
+                                    "config": {}
+                                },
+                                "kernel_regularizer": null,
+                                "bias_regularizer": null,
+                                "activity_regularizer": null,
+                                "kernel_constraint": null,
+                                "bias_constraint": null
+                            }
+                        }
+                    ],
+                    "build_input_shape": [
+                        null,
+                        80
+                    ]
+                },
+                "keras_version": "2.3.0-tf",
+                "backend": "tensorflow"
+            },
+            "batch_size": 128,
+            "optimizer": {
+                "optimizer": "Adam",
+                "learning_rate": 0.01
+            },
+            "early_stop": {
+                "early_stop": "diff",
+                "eps": 0.0001
+            },
+            "loss": "sparse_categorical_crossentropy",
+            "metrics": [
+                "accuracy"
+            ],
+            "max_iter": 2,
+            "sparsity": 0.1,
+            "secure_aggregate": "flashe",
+            "secure_aggregate_args": {
+                "mask": "dynamic",
+                "quantize": {
+                    "int_bits": 20,
+                    "batch": false,
+                    "element_bits": 16,
+                    "padding": true,
+                    "secure": true
+                },
+                "precompute": {
+                    "enable": false
+                },
+                "mode": "parallel",
+                "num_partitions": 1
+            }
+        }
+    }
+}

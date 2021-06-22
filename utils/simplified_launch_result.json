@@ -5,7 +5,7 @@
         "region": "us-east-2",
         "private_ip": "172.32.46.144",
         "security_group": "sg-0344edb49871f8e8a",
-        "public_ip": "3.16.14.84"
+        "public_ip": "18.222.209.114"
     },
     "client": [
         {
@@ -14,7 +14,7 @@
             "region": "us-east-2",
             "private_ip": "172.32.42.129",
             "security_group": "sg-0344edb49871f8e8a",
-            "public_ip": "3.17.141.58"
+            "public_ip": "3.23.85.93"
         },
         {
             "name": "flashe.3",
@@ -22,7 +22,7 @@
             "region": "us-west-1",
             "private_ip": "172.32.73.183",
             "security_group": "sg-06a31c4844b3b98a2",
-            "public_ip": "54.176.65.136"
+            "public_ip": "54.67.41.27"
         },
         {
             "name": "flashe.4",
@@ -30,7 +30,7 @@
             "region": "us-west-1",
             "private_ip": "172.32.73.108",
             "security_group": "sg-06a31c4844b3b98a2",
-            "public_ip": "54.193.67.254"
+            "public_ip": "13.52.215.100"
         }
     ]
 }

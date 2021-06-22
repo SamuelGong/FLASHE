@@ -1,4 +1,5 @@
 #!/bin/bash
+cwd=`pwd`
 PROJECT_DIR=`pwd`/../
 
 # cannot even proceed with FATE if not having sudo privilege
@@ -49,3 +50,4 @@ cd ${PROJECT_DIR}
 cat ./cluster-deploy/original_requirements.txt > ./cluster-deploy/requirements.txt
 cat ./deployment/additional_requirements.txt >> ./cluster-deploy/requirements.txt
 echo "[SUCCEEDED] Finish"
+cd ${cwd}

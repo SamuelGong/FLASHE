@@ -6,10 +6,10 @@
                     "Code": 32,
                     "Name": "shutting-down"
                 },
-                "InstanceId": "i-02e0b8780f196836a",
+                "InstanceId": "i-049345395078b0536",
                 "PreviousState": {
-                    "Code": 16,
-                    "Name": "running"
+                    "Code": 64,
+                    "Name": "stopping"
                 }
             },
             {
@@ -17,24 +17,24 @@
                     "Code": 32,
                     "Name": "shutting-down"
                 },
-                "InstanceId": "i-09e71f001a03dbea6",
+                "InstanceId": "i-0cadc1fea1e670c8f",
                 "PreviousState": {
-                    "Code": 16,
-                    "Name": "running"
+                    "Code": 64,
+                    "Name": "stopping"
                 }
             }
         ],
         "ResponseMetadata": {
-            "RequestId": "01f308d7-5b14-4571-a42d-652f94ecd397",
+            "RequestId": "f92e3a21-43de-484c-97c9-cfd82dd28c2a",
             "HTTPStatusCode": 200,
             "HTTPHeaders": {
-                "x-amzn-requestid": "01f308d7-5b14-4571-a42d-652f94ecd397",
+                "x-amzn-requestid": "f92e3a21-43de-484c-97c9-cfd82dd28c2a",
                 "cache-control": "no-cache, no-store",
                 "strict-transport-security": "max-age=31536000; includeSubDomains",
                 "content-type": "text/xml;charset=UTF-8",
                 "transfer-encoding": "chunked",
                 "vary": "accept-encoding",
-                "date": "Sat, 19 Jun 2021 16:09:39 GMT",
+                "date": "Tue, 22 Jun 2021 13:57:56 GMT",
                 "server": "AmazonEC2"
             },
             "RetryAttempts": 0

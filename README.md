@@ -39,12 +39,12 @@ Please go to `./simulation` directory and follow the simulation [README](./simul
 Repo Root
 |---- arch                  # (FATE internal)
 |---- cluster-deploy        # (FATE internal)
-|---- examples
-|---- deployment
+|---- examples              # Example datasets and configurations of FLASHE
+|---- deployment            # Procedures for deploying and evaluating FLASHE
 |---- fate_flow             # (FATE internal)
 |---- federatedml           # (FATE internal)
-|---- simulation
-|---- utils
+|---- simulation            # Procedures related to simulation in FLASHE
+|---- utils                 # Tools helpful for playing with FATE/FLASHE
 |---- eggroll               # (FATE generated)
 |---- fate-flow             # (FATE generated)
 ```

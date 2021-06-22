@@ -1,3 +1,4 @@
+CURRENT_DIR=`pwd`
 CONFIG_FILE=cluster_conf.yml
 
 # These are necessary to accommodate FATE's CentOS scripts
@@ -53,5 +54,5 @@ adapt
 config
 package
 deploy
-
+cd ${CURRENT_DIR}
 echo "[SUCCEEDED] Finish"
