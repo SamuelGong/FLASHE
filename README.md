@@ -52,16 +52,16 @@ Repo Root
 # Notes
 Please consider to cite our paper if you use the code or data in your research project.
 ```bibtex
-@inproceedings{FLASHE-socc21,
+@inproceedings{FLASHE-arxiv21,
   title={FLASHE: Additively Symmetric Homomorphic Encryption for Cross-Silo Federated Learning},
   author={Zhifeng Jiang and Wei Wang and Yang Liu},
-  booktitle={ACM Symposium on Cloud Computing (SoCC)},
+  booktitle={arXiv:2109.00675},
   year={2021}
 }
 ```
 
 # Acknowledgement
-Thanks to [Chengliang Zhang](https://github.com/marcoszh) and [Junzhe Xia](#) for their engineering advice regarding FATE. Thanks to [Minchen Yu](https://github.com/MincYu) for his suggestions on experiment automation.
+Thanks to [Chengliang Zhang](https://github.com/marcoszh) and [Junzhe Xia](#) for their engineering advice regarding FATE. Thanks to [Minchen Yu](https://github.com/MincYu) for his suggestions on development automation.
 
 # Contact
 Zhifeng Jiang (zjiangaj@cse.ust.hk)
