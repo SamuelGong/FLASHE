@@ -27,7 +27,7 @@ If you are willing to renting resources offered by AWS like we did, we are happy
 
 Once you have successfully established a several-node cluster which meets the two aforementioned prerequisites,
 be relaxed as all the necessary setup commands have been packed into one script or two. 
-*Note that some commands related to FATE v1.2.0's [deployment](https://github.com/FederatedAI/FATE/tree/v1.2.0/cluster-deploy) may be ***intrusive*** to your systems. For example, it will extend some system limits and install dependencies in a global sense. If you have concerns about these, you may want to delve into the script first and see if you should go on with the environment.*
+*Note that some commands related to FATE v1.2.0's [deployment](https://github.com/FederatedAI/FATE/tree/v1.2.0/cluster-deploy) may be ***intrusive*** to your systems. For example, it will extend some system limits and install dependencies in a global sense. If you have concerns about these, you may want to delve into the script first and see if you need to switch to another evaluation environment.*
 
 1. At ***all nodes (server & clients)***, execute the following command.
     ```bash
