@@ -1,6 +1,6 @@
 # Cloud Deployment
 
-This folder contains scripts and instructions for reproducing the experiments conducted under geo-distributed settings in our SoCC '21 paper. 
+This folder contains scripts and instructions for reproducing the experiments conducted under geo-distributed settings in our arXiv '21 paper. 
 Our training evaluations rely on a distributed setting of ***multiple machines*** via the Parameter-Server (PS) architecture.
 In our paper, we used 10 `c5.4xlarge` machines to simulate 10 participants and 1 `r5.4xlarge` machine to emulate the server in each round.
 To be exact, their configurations are:
