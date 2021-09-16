@@ -31,7 +31,7 @@ be relaxed as all the necessary setup commands have been packed into one script 
 
 1. At ***all nodes (server & clients)***, execute the following command.
     ```bash
-    cd /home/ubuntu/FLASHE/utils
+    cd /home/ubuntu/FLASHE/deployment
     source ./all_nodes_prepare.sh
     ```
 2. Then at ***server node***, make appropriate modifications on the configuration file [cluster_conf.yml](./cluster_conf.yml) (comments there can help you quickly understand how to specify the parameters) and run
