@@ -34,3 +34,4 @@ __pycache__
 /eggroll/
 /cluster-deploy/packages/
 /cluster-deploy/output_packages/
+.ipynb_checkpoints
