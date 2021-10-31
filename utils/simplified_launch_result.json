@@ -1,36 +1,36 @@
 {
     "server": {
         "name": "flashe.1",
-        "id": "i-050fa5e23f2296af1",
+        "id": "i-06330b11e26ab0fd4",
         "region": "us-east-2",
-        "private_ip": "172.32.46.144",
+        "private_ip": "172.32.34.115",
         "security_group": "sg-0344edb49871f8e8a",
-        "public_ip": "18.222.209.114"
+        "public_ip": "3.23.114.224"
     },
     "client": [
         {
             "name": "flashe.2",
-            "id": "i-03ee2636f8062176a",
+            "id": "i-000e9fe46fd687972",
             "region": "us-east-2",
-            "private_ip": "172.32.42.129",
+            "private_ip": "172.32.39.157",
             "security_group": "sg-0344edb49871f8e8a",
-            "public_ip": "3.23.85.93"
+            "public_ip": "18.117.236.245"
         },
         {
             "name": "flashe.3",
-            "id": "i-049345395078b0536",
+            "id": "i-04ba3cbe37338763e",
             "region": "us-west-1",
-            "private_ip": "172.32.73.183",
+            "private_ip": "172.32.74.92",
             "security_group": "sg-06a31c4844b3b98a2",
-            "public_ip": "54.67.41.27"
+            "public_ip": "3.101.18.219"
         },
         {
             "name": "flashe.4",
-            "id": "i-0cadc1fea1e670c8f",
+            "id": "i-0ceff702fcf84bd52",
             "region": "us-west-1",
-            "private_ip": "172.32.73.108",
+            "private_ip": "172.32.79.229",
             "security_group": "sg-06a31c4844b3b98a2",
-            "public_ip": "13.52.215.100"
+            "public_ip": "54.153.127.60"
         }
     ]
 }

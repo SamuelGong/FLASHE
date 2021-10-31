@@ -38,6 +38,7 @@ do
   ssh -l ubuntu ${ip} -i ~/.ssh/MyKeyPair.pem "echo ${local_pub} >> ~/.ssh/authorized_keys"
   ssh -l ubuntu ${ip} -i ~/.ssh/MyKeyPair.pem "echo ${pub} >> ~/.ssh/authorized_keys"
   scp -q -i ~/.ssh/MyKeyPair.pem id_rsa ubuntu@${ip}:/home/ubuntu/.ssh/id_rsa
+  ssh -l ubuntu ${ip} -i ~/.ssh/MyKeyPair.pem "chmod 600 /home/ubuntu/.ssh/id_rsa"
   scp -q -i ~/.ssh/MyKeyPair.pem id_rsa.pub ubuntu@${ip}:/home/ubuntu/.ssh/id_rsa.pub
   ssh ubuntu@${ip} "echo -e 'Host *\n    StrictHostKeyChecking no' > ~/.ssh/config"
 done

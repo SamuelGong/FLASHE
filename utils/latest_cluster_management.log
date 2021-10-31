@@ -3,38 +3,38 @@
         "TerminatingInstances": [
             {
                 "CurrentState": {
-                    "Code": 32,
-                    "Name": "shutting-down"
+                    "Code": 48,
+                    "Name": "terminated"
                 },
-                "InstanceId": "i-049345395078b0536",
+                "InstanceId": "i-04ba3cbe37338763e",
                 "PreviousState": {
-                    "Code": 64,
-                    "Name": "stopping"
+                    "Code": 80,
+                    "Name": "stopped"
                 }
             },
             {
                 "CurrentState": {
-                    "Code": 32,
-                    "Name": "shutting-down"
+                    "Code": 48,
+                    "Name": "terminated"
                 },
-                "InstanceId": "i-0cadc1fea1e670c8f",
+                "InstanceId": "i-0ceff702fcf84bd52",
                 "PreviousState": {
-                    "Code": 64,
-                    "Name": "stopping"
+                    "Code": 80,
+                    "Name": "stopped"
                 }
             }
         ],
         "ResponseMetadata": {
-            "RequestId": "f92e3a21-43de-484c-97c9-cfd82dd28c2a",
+            "RequestId": "de34ab74-2d91-4d88-bf7b-ead47375d1a7",
             "HTTPStatusCode": 200,
             "HTTPHeaders": {
-                "x-amzn-requestid": "f92e3a21-43de-484c-97c9-cfd82dd28c2a",
+                "x-amzn-requestid": "de34ab74-2d91-4d88-bf7b-ead47375d1a7",
                 "cache-control": "no-cache, no-store",
                 "strict-transport-security": "max-age=31536000; includeSubDomains",
+                "vary": "accept-encoding",
                 "content-type": "text/xml;charset=UTF-8",
                 "transfer-encoding": "chunked",
-                "vary": "accept-encoding",
-                "date": "Tue, 22 Jun 2021 13:57:56 GMT",
+                "date": "Fri, 17 Sep 2021 08:18:27 GMT",
                 "server": "AmazonEC2"
             },
             "RetryAttempts": 0

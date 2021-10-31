@@ -7,13 +7,13 @@ auth:
   common_ssh_user: ubuntu
 
 # ip address of the server
-server_ip: 172.32.46.144
+server_ip: 172.32.34.115
 
 # ip addresses of clients
 # In FATE, one client should be statically assigned as the leader
 # which does not differ from other clients in function except that
 # she is the one who initiates a federation
-leader_client_ip: 172.32.42.129
+leader_client_ip: 172.32.39.157
 other_clients_ips:
-- 172.32.73.183
-- 172.32.73.108
+- 172.32.74.92
+- 172.32.79.229
