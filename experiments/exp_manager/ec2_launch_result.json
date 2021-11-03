@@ -1,0 +1,34 @@
+[
+    {
+        "name": "flashe-worker-1",
+        "id": "i-0e27d8b00e3371da4",
+        "region": "us-east-2",
+        "private_ip": "172.32.32.191",
+        "security_group": "sg-0344edb49871f8e8a",
+        "public_ip": "18.220.246.249"
+    },
+    {
+        "name": "flashe-worker-2",
+        "id": "i-038957b176c17a51c",
+        "region": "us-east-2",
+        "private_ip": "172.32.45.32",
+        "security_group": "sg-0344edb49871f8e8a",
+        "public_ip": "3.17.145.10"
+    },
+    {
+        "name": "flashe-worker-3",
+        "id": "i-005c96951a737cc79",
+        "region": "us-east-2",
+        "private_ip": "172.32.41.218",
+        "security_group": "sg-0344edb49871f8e8a",
+        "public_ip": "18.116.32.228"
+    },
+    {
+        "name": "flashe-coordinator",
+        "id": "i-0e9b31fd3c5cf7a03",
+        "region": "us-east-2",
+        "private_ip": "172.32.33.69",
+        "security_group": "sg-0344edb49871f8e8a",
+        "public_ip": "18.118.82.25"
+    }
+]
