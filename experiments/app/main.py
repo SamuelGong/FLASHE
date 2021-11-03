@@ -5,14 +5,15 @@ Home-made logic for installing, deploying and using FATE it in a cluster
 
 import sys
 import json
+import os
 
-sys.path.append('..')
+sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
 from utils import ExecutionEngine
 
 
 def main(args):
     command, launch_result_path, local_private_key_path, \
-        last_response_path, project_dir, exp_mgr_rel = args[0:6]
+        last_response_path, project_dir, app_rel = args[0:6]
     with open(launch_result_path, 'r') as fin:
         launch_result = json.load(fin)
 
@@ -30,7 +31,7 @@ def main(args):
         if command == "standalone":
             remote_template.update({
                 'commands': [
-                    f"cd {project_dir}/{exp_mgr_rel}/exp_manager/app/ "
+                    f"cd {project_dir}/{app_rel}/ "
                     "&& source standalone_install.sh"
                 ]
             })
@@ -44,7 +45,7 @@ def main(args):
             if 'coordinator' in name:
                 remote_template.update({
                     'commands': [
-                        f"cd {project_dir}/{exp_mgr_rel}/app/ && source cluster_install.sh"
+                        f"cd {project_dir}/{app_rel}/ && source cluster_install.sh"
                     ]
                 })
                 execution_sequence = [

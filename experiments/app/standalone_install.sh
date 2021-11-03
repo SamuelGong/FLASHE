@@ -32,6 +32,7 @@ sudo sed -i '/^\*\s\{1,\}soft\s\{1,\}nproc/{h;s/nproc\s\{1,\}.*/nproc unlimited/
 echo "[INFO] Adapt to Ubuntu..."
 echo "dash dash/sh boolean false" | sudo debconf-set-selections
 sudo dpkg-reconfigure -f noninteractive dash
+
 sudo apt update
 sudo apt-get install -y gcc g++ make openssl supervisor libgmp-dev  libmpfr-dev libmpc-dev libaio1 libaio-dev numactl autoconf automake libtool libffi-dev libssl1.0.0 libssl-dev liblz4-1 liblz4-dev liblz4-1-dbg liblz4-tool  zlib1g zlib1g-dbg zlib1g-dev libgflags-dev
 cd /usr/lib/x86_64-linux-gnu
