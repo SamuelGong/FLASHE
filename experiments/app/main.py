@@ -8,7 +8,7 @@ import json
 import os
 
 sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
-from utils import ExecutionEngine
+from exp_manager.utils import ExecutionEngine
 
 
 def main(args):
