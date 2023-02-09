@@ -1,6 +1,6 @@
 # FLASHE
 
-This repository contains scripts and instructions for reproducing the experiments in our **arXiv '21** paper [FLASHE](#).
+This repository contains scripts and instructions for reproducing the experiments in our **arXiv '21** paper [FLASHE](https://arxiv.org/pdf/2109.00675.pdf).
 FLASHE is integrated as a pluggable module in [FATE v1.2.0](https://github.com/FederatedAI/FATE/tree/v1.2.0), an open-source industrial platform crafted by [WeBank](https://www.webank.com/#/home) for cross-silo federated learning.
 You may want to use commands like `git diff` to see what have been changed since the fork (i.e., the [first commit](https://github.com/SamuelGong/FLASHE/commit/bacce3035f5972d4ec3f59e42c14152090664895)).
 
