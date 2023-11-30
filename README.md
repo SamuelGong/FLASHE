@@ -60,6 +60,14 @@ Please consider to cite our paper if you use the code or data in your research p
 }
 ```
 
+
+## [Recent activity [![Time period](https://images.repography.com/44587806/SamuelGong/FLASHE/recent-activity/alDD3Sf9KDRhPSTEx6T6ELIecvIXIBDZXOyKbNM2Hj8/X3EQn7ftZ2kWrzLkB-hQdg3TWfufN3h6ZlXUXdkjqfA_badge.svg)](https://repography.com)
+[![Timeline graph](https://images.repography.com/44587806/SamuelGong/FLASHE/recent-activity/alDD3Sf9KDRhPSTEx6T6ELIecvIXIBDZXOyKbNM2Hj8/X3EQn7ftZ2kWrzLkB-hQdg3TWfufN3h6ZlXUXdkjqfA_timeline.svg)](https://github.com/SamuelGong/FLASHE/commits)
+[![Issue status graph](https://images.repography.com/44587806/SamuelGong/FLASHE/recent-activity/alDD3Sf9KDRhPSTEx6T6ELIecvIXIBDZXOyKbNM2Hj8/X3EQn7ftZ2kWrzLkB-hQdg3TWfufN3h6ZlXUXdkjqfA_issues.svg)](https://github.com/SamuelGong/FLASHE/issues)
+[![Pull request status graph](https://images.repography.com/44587806/SamuelGong/FLASHE/recent-activity/alDD3Sf9KDRhPSTEx6T6ELIecvIXIBDZXOyKbNM2Hj8/X3EQn7ftZ2kWrzLkB-hQdg3TWfufN3h6ZlXUXdkjqfA_prs.svg)](https://github.com/SamuelGong/FLASHE/pulls)
+[![Activity map](https://images.repography.com/44587806/SamuelGong/FLASHE/recent-activity/alDD3Sf9KDRhPSTEx6T6ELIecvIXIBDZXOyKbNM2Hj8/X3EQn7ftZ2kWrzLkB-hQdg3TWfufN3h6ZlXUXdkjqfA_map.svg)](https://github.com/SamuelGong/FLASHE/commits)
+
+
 # Acknowledgement
 Thanks to [Chengliang Zhang](https://github.com/marcoszh) and [Junzhe Xia](#) for their engineering advice regarding FATE. Thanks to [Minchen Yu](https://github.com/MincYu) for his suggestions on development automation.
 
