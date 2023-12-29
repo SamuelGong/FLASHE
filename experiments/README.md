@@ -8,7 +8,7 @@ This folder aims to be an all-in-one guidance for playing with FLASHE atop FATE 
 
 At first, one needs to
 
-1. git pull exp_manager and modify the init_env.sh
+1. git pull and install exp_manager and modify the init_env.sh
 2. aws configure
 
 ### 1.2 Launching a Cluster
@@ -20,6 +20,8 @@ bash exp_manager/manage_cluster.sh launch
 
 *p.s., One can stop/reboot/start/terminate the cluster now simply by executing command `bash exp_manager/manage_cluster.sh [stop/reboot/start/terminate]` at the current folder.*
 
+TODO: passwordless_login
+
 ### 1.3 Installing FATE and FLASHE
 
 Execute the shell commands below which:
@@ -28,5 +30,7 @@ Execute the shell commands below which:
 ```bash
 bash exp_manager/manage_app.sh install
 ```
+
+TODO: cluster_install, cluster_start
 
 ## 2. Replicating Results in the Paper
